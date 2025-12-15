@@ -35,7 +35,7 @@ async function updateQRCode() {
     await QRCode.toCanvas(canvas, [{data: dataBuffer, mode: 'byte'}], {
         version: 3,
         errorCorrectionLevel: 'L',
-        width: 300,
+        width: 200,
         margin: 0,
         color: {
             dark: '#000000',
