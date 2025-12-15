@@ -59,11 +59,13 @@ button:hover {
 }
 #qr-code {
   margin: 2rem 0;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 }
 .timestamp {
   font-family: monospace;
   font-size: 1rem;
-  margin-top: 0.5rem;
 }
 .qr-string {
   font-family: monospace;

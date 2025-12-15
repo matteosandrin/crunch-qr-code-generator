@@ -42,6 +42,8 @@ async function updateQRCode() {
             light: '#ffffff'
         },
     });
+    canvas.style.removeProperty('width');
+    canvas.style.removeProperty('height');
     
     const now = new Date();
     document.getElementById('timestamp').textContent =
