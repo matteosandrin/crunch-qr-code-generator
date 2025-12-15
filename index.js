@@ -1,4 +1,5 @@
-let qrCodeInstance = null;
+import QRCode from 'https://esm.sh/qrcode@1.5.3';
+
 let memberId = null;
 let updateInterval = null;
 
@@ -25,18 +26,23 @@ function generateQRString() {
 }
 
 
-function updateQRCode() {
+async function updateQRCode() {
+    const textEncoder = new TextEncoder();
     const qrString = generateQRString();
-    const qrContainer = document.getElementById('qr-code');
-    qrContainer.innerHTML = '';
-    qrCodeInstance = new QRCode(qrContainer, {
-        text: qrString,
+    const dataBuffer = textEncoder.encode(qrString);
+    const canvas = document.getElementById('qr-code');
+    
+    await QRCode.toCanvas(canvas, [{data: dataBuffer, mode: 'byte'}], {
+        version: 3,
+        errorCorrectionLevel: 'L',
         width: 300,
-        height: 300,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.L
+        margin: 0,
+        color: {
+            dark: '#000000',
+            light: '#ffffff'
+        },
     });
+    
     const now = new Date();
     document.getElementById('timestamp').textContent =
         `Updated: ${now.toLocaleString()}`;
