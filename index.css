@@ -25,9 +25,9 @@ h1 {
 }
 .grey-container {
   padding: 1rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
   width: 100%;
-  min-height: calc(100vh - 4rem - 1px);
+  min-height: calc(100vh - 3rem - 1px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,7 +37,7 @@ h1 {
   height: 100%;
   width: 100%;
   padding: 1rem;
-  padding-top: 10rem;
+  padding-top: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,7 +93,7 @@ input:focus {
   color: white;
   font-size: 1rem;
   font-weight: medium;
-  height: 4rem;
+  height: 3rem;
   width: 100%;
   display: flex;
   flex-direction: row;
