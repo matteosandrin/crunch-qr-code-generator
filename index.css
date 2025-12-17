@@ -11,17 +11,45 @@ body {
   font-size: 12px;
   color: black;
   min-height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background: white;
+  width: 100%;
+  background: black;
 }
 h1 {
   font-size: 2rem;
 }
 .container {
-  padding: 2rem;
   text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(235, 235, 235, 1.0);
+}
+.grey-container {
+  padding: 1rem;
+  padding-bottom: 3rem;
+  width: 100%;
+  min-height: calc(100vh - 4rem - 1px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inner-container {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  padding-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  font-size: 1rem;
+  color: rgba(149, 149, 149, 1.0);
+  border-radius: 0.25rem;
+  height: 80%;
+  flex-grow: 1;
+}
+#input-container {
+  padding: 2rem;
 }
 .input-section {
   margin-top: 2rem;
@@ -38,7 +66,7 @@ input:focus {
   outline: none;
   border-color: #007bff;
 }
-button {
+.primary-button {
   padding: 1rem 2rem;
   font-size: 1rem;
   background: #007bff;
@@ -48,41 +76,55 @@ button {
   cursor: pointer;
   width: 100%;
 }
-button:hover {
+.primary-button:hover {
   background: #0056b3;
 }
 .reset-button {
-  margin-top: 2rem;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+.header {
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  font-weight: medium;
+  height: 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.footer {
+  font-size: 0.75rem;
+  font-family: monospace;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: oklch(70.7% 0.022 261.325);
 }
 #qr-container {
   display: none;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
 #qr-code {
-  margin: 2rem 0;
   width: 100%;
-  max-width: 200px;
+  max-width: 180px;
   height: auto;
 }
-.timestamp {
-  font-family: monospace;
-  font-size: 1rem;
-}
-.qr-string {
-  font-family: monospace;
-  font-size: 0.75rem;
-  margin-top: 0.5rem;
-  word-break: break-all;
-}
 .progress-container {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 3px;
-  background: white;
-  display: none;
+  height: 1px;
+  background: rgba(235, 235, 235, 1.0);
 }
 .progress-bar {
   height: 100%;

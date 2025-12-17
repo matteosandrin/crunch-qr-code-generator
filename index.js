@@ -62,10 +62,8 @@ function startDisplay() {
         alert('Please enter a Member ID');
         return;
     }
-    document.getElementById('input-section').style.display = 'none';
-    document.getElementById('qr-container').style.display = 'flex';
-    document.getElementById('progress-container').style.display = 'block';
-    document.querySelector('h1').textContent = memberId;
+    document.getElementById('input-container').style.display = 'none';
+    document.getElementById('qr-container').style.display = 'block';
     updateQRCode();
     if (updateInterval) clearInterval(updateInterval);
     updateInterval = setInterval(updateQRCode, 15000);
