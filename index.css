@@ -13,15 +13,25 @@ body {
   color: black;
   min-height: 100%;
   width: 100%;
-  background: black;
+  background-color: rgba(235, 235, 235, 1);;
 }
+
+@media (max-width: 32rem) {
+  body {
+    background-color: black;
+  }
+}
+
 h1 {
   font-size: 2rem;
 }
 .container {
   text-align: center;
   width: 100%;
+  max-width: 32rem;
   min-height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
   background-color: rgba(235, 235, 235, 1);
 }
 .grey-container {
