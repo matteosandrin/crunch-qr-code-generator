@@ -1,4 +1,4 @@
-import QRCode from "https://esm.sh/qrcode@1.5.3";
+import QRCode from "qrcode";
 
 let memberId = null;
 let updateInterval = null;

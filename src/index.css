@@ -13,7 +13,7 @@ body {
   color: black;
   min-height: 100%;
   width: 100%;
-  background-color: rgba(235, 235, 235, 1);;
+  background-color: rgba(235, 235, 235, 1);
 }
 
 @media (max-width: 32rem) {
