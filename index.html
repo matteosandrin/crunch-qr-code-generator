@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crunch QR</title>
+    <meta
+      name="description"
+      content="Generate QR codes for Crunch Gym check-in"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" href="/icon.png" />
+    <link rel="apple-touch-icon" href="/icon.png" />
+    <script type="module" crossorigin src="/assets/index-DKtnjW4P.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-Dcq4HOfs.css">
+  <link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head>
+  <body>
+    <div class="container">
+      <div id="input-container">
+        <h1>
+          Crunch Gym
+          <br />
+          QR Code Generator
+        </h1>
+        <div class="input-section" id="input-section">
+          <form method="get">
+            <input
+              type="text"
+              id="id"
+              name="id"
+              placeholder="Enter Member ID"
+            />
+            <button type="submit" class="primary-button">Generate</button>
+          </form>
+        </div>
+      </div>
+      <div id="qr-container">
+        <div class="header">
+          <form method="get">
+            <button type="submit" class="reset-button">Back</button>
+          </form>
+          <span>Check-In</span>
+          <span>History</span>
+        </div>
+        <div class="progress-container" id="progress-container">
+          <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <div class="grey-container">
+          <div class="inner-container">
+            <span>Time to sweat!</span>
+            <canvas id="qr-code"></canvas>
+          </div>
+          <div class="footer">
+            <div class="timestamp" id="timestamp"></div>
+            <div class="qr-string" id="qr-string"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
