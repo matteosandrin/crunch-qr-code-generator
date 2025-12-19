@@ -1,13 +1,23 @@
 import QRCode from "qrcode";
 
+const STORAGE_KEY = "crunch-member-id";
+
 let memberId = null;
 let updateInterval = null;
 
 const urlParams = new URLSearchParams(window.location.search);
 const urlMemberId = urlParams.get("id");
+const storedMemberId = localStorage.getItem(STORAGE_KEY);
+
 if (urlMemberId) {
   document.getElementById("id").value = urlMemberId;
+} else if (storedMemberId) {
+  document.getElementById("id").value = storedMemberId;
 }
+
+document.querySelector(".reset-button").addEventListener("click", () => {
+  localStorage.removeItem(STORAGE_KEY);
+});
 
 function formatTimestamp(date) {
   const pad = (n) => n.toString().padStart(2, "0");
@@ -61,6 +71,7 @@ function startDisplay() {
     alert("Please enter a Member ID");
     return;
   }
+  localStorage.setItem(STORAGE_KEY, memberId);
   document.getElementById("input-container").style.display = "none";
   document.getElementById("qr-container").style.display = "block";
   updateQRCode();
@@ -68,6 +79,6 @@ function startDisplay() {
   updateInterval = setInterval(updateQRCode, 15000);
 }
 
-if (urlMemberId) {
+if (urlMemberId || storedMemberId) {
   startDisplay();
 }
